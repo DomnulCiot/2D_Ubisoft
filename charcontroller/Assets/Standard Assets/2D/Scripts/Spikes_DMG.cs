@@ -2,21 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes_DMG : MonoBehaviour {
+public class Spikes_DMG : MonoBehaviour
+{
 
     public Player_Health player;
-    public float knockbackForce = 1000f;
-
-    void Start ()
+    float TimeSearch = 0;
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Health>();
     }
 
-    void OnTriggerEnter2D (Collider2D col)
+    void Update()
     {
+        if (player != null)
+        {
+            FindPlayer();
+            return;
+        }
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
         if (col.CompareTag("Player"))
             player.Damage(10);
-
-        StartCoroutine(player.KnockBack(0.02f, knockbackForce, player.transform.position));
+        if (player == null)
+        {
+            FindPlayer();
+            return;
+        }
+        StartCoroutine(player.KnockBack(0.02f, 350f, player.transform.position));
+    }
+    void FindPlayer()
+    {
+        if (TimeSearch <= Time.time)
+        {
+            GameObject Search = GameObject.FindGameObjectWithTag("Player");
+            if (Search != null)
+                player = Search.GetComponent<Player_Health>();
+            TimeSearch = Time.time + 0.5f;
+        }
     }
 }
