@@ -48,9 +48,6 @@ public class dash : MonoBehaviour
             cool = 0;
         }
 
-
-
-
         if (cool < 50)
             cool += 0.5f;
         if (duration > 0)
