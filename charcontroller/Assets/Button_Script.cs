@@ -23,7 +23,7 @@ public class Button_Script : MonoBehaviour {
 
     public void Quit ()
     {
-        Pause_Menu.Quit();
+        Application.Quit();
     }
     public void Back ()
     {
@@ -33,6 +33,7 @@ public class Button_Script : MonoBehaviour {
     }
     public void Full_Screen (bool IsFullScreen)
     {
-        Screen.fullScreen = IsFullScreen; 
+        Debug.Log("ponis" + IsFullScreen);
+        Screen.fullScreen = IsFullScreen;
     }
 }

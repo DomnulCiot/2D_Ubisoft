@@ -130,7 +130,7 @@ namespace UnityStandardAssets._2D
               {
                   WallCheck = Physics2D.OverlapCircle(WallCheckPoint.position, 0.1f, WallLayer);
 
-                  if (((m_FacingRight && Input.GetAxis("Horizontal") > 0.01f) || (!m_FacingRight && Input.GetAxis("Horizontal") < 0.1f)) && WallCheck)
+                  if (((m_FacingRight) || (!m_FacingRight)) && WallCheck)
                   {
                       WallSliding_Function();
                   }
@@ -161,7 +161,9 @@ namespace UnityStandardAssets._2D
                   {
                       m_Rigidbody2D.AddForce(new Vector2(x, y) * m_JumpForce);
                   }
+                Flip();
               }
+           
           }
           
 
