@@ -405,6 +405,72 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &340331541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 340331543}
+  - component: {fileID: 340331542}
+  - component: {fileID: 340331544}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &340331542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 340331541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c11085e4b3a1844a49d3a5ed1fbb52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: tema
+    clip: {fileID: 8300000, guid: 0008e8b6769c0024aa6d459e213c219f, type: 3}
+    volume: 94.92
+    pitch: 0
+    source: {fileID: 0}
+    mixer: {fileID: 24300002, guid: ce6d265ea4368384db2e89899920ada7, type: 2}
+  P:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+--- !u!4 &340331543
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 340331541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &340331544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 340331541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec4970866075ea4e9e0b2f11824d522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &412969438
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +676,6 @@ GameObject:
   m_Component:
   - component: {fileID: 671666382}
   - component: {fileID: 671666381}
-  - component: {fileID: 671666384}
   - component: {fileID: 671666383}
   m_Layer: 0
   m_Name: Menu_Manager
@@ -658,31 +723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audiomixer: {fileID: 24100000, guid: ce6d265ea4368384db2e89899920ada7, type: 2}
   slider: {fileID: 2134202879}
---- !u!114 &671666384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 671666380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c11085e4b3a1844a49d3a5ed1fbb52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: tema
-    clip: {fileID: 8300000, guid: 0008e8b6769c0024aa6d459e213c219f, type: 3}
-    volume: 54
-    pitch: 0
-    source: {fileID: 0}
-    mixer: {fileID: 24300002, guid: ce6d265ea4368384db2e89899920ada7, type: 2}
-  P:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    mixer: {fileID: 0}
 --- !u!1 &916542155
 GameObject:
   m_ObjectHideFlags: 0

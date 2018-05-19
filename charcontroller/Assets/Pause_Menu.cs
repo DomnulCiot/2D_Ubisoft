@@ -7,7 +7,15 @@ public class Pause_Menu : MonoBehaviour {
 
     public static bool IsPaused = false;
     public GameObject Pause_UI;
+    public GameObject Pause_UI_2;
 	// Update is called once per frame
+
+        void Awake ()
+    {
+        IsPaused = false;
+        Time.timeScale = 1f;
+        Pause_UI.SetActive(false);
+    }
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -21,6 +29,18 @@ public class Pause_Menu : MonoBehaviour {
             }
         }
 	}
+
+    public void BackToMenu ()
+    {
+        Pause_UI.SetActive(true);
+        Pause_UI_2.SetActive(false);
+    }
+
+    public void EnterOpt ()
+    {
+        Pause_UI.SetActive(false);
+        Pause_UI_2.SetActive(true);
+    }
 
     void Pause ()
     {

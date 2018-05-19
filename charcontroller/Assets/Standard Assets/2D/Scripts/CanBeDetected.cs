@@ -24,4 +24,13 @@ public class CanBeDetected : MonoBehaviour
             gotoplayer = true;
         }
     }
+
+    private void OnTriggerExit2D (Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy") && !PlayerHidden)
+        {
+            gotoplayer = false;
+        }
+
+    }
 }

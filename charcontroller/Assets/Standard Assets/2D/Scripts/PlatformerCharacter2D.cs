@@ -155,13 +155,14 @@ namespace UnityStandardAssets._2D
                   if (m_FacingRight)
                   {
                       m_Rigidbody2D.AddForce(new Vector2(-x, y) * m_JumpForce);
-
-                  }
+                    Flip();
+                }
                   else
                   {
                       m_Rigidbody2D.AddForce(new Vector2(x, y) * m_JumpForce);
-                  }
-                Flip();
+                    Flip();
+                }
+                
               }
            
           }
