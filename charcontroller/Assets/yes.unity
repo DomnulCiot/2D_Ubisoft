@@ -1406,6 +1406,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba4eef1c1bb56b444b143beb8d3e30d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &939984634 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1068831709277398, guid: 98f5e279f3df84243bcc683ac492d23d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1626754979}
+--- !u!114 &939984644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 939984634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d46edbfda0215543bc70490f1ae5da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHidden: 0
+  gotoplayer: 0
 --- !u!1001 &1121503266
 Prefab:
   m_ObjectHideFlags: 0
@@ -1468,9 +1486,10 @@ GameObject:
   - component: {fileID: 1282469389}
   - component: {fileID: 1282469393}
   - component: {fileID: 1282469390}
+  - component: {fileID: 1282469394}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1592,6 +1611,22 @@ MonoBehaviour:
   pos1: {x: 31.53, y: -3.996, z: 0}
   pos2: {x: 37.67, y: -3.996, z: 0}
   speed: 1
+  target: {fileID: 1632493909}
+--- !u!58 &1282469394
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282469388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.25, y: 0.3}
+  serializedVersion: 2
+  m_Radius: 3.9356241
 --- !u!1 &1305025025
 GameObject:
   m_ObjectHideFlags: 0
