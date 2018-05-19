@@ -6,6 +6,7 @@ TagManager:
   tags:
   - movable_platform
   - GM
+  - Enemy
   layers:
   - Default
   - TransparentFX
