@@ -7,6 +7,7 @@ TagManager:
   - movable_platform
   - GM
   - Enemy
+  - Elder
   layers:
   - Default
   - TransparentFX
