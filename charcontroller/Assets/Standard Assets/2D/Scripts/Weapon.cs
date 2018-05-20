@@ -38,7 +38,16 @@ public class Weapon : MonoBehaviour
             }
 
         }
-       
+
+        if (dist_joint.enabled)
+        {
+            if (Input.GetKey("down"))
+            {
+                dist_joint.distance += 0.1f;
+            }
+
+        }
+
 
         // Debug.Log(GameObject.Find("Grappler(Clone)"));
         Bullet = GameObject.Find("Grappler(Clone)");
