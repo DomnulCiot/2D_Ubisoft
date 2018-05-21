@@ -6,16 +6,17 @@ public class EnemyMovementControl : MonoBehaviour {
 
     public float nr;
     public float speed = 10.0f;
+    private CanBeDetected player;
     public Transform target;
     public float posIn;
     public bool FacingRight = false;
     public bool GeneralRoutine = true;
     public bool MovingRight = true;
     float TimeSearch;
-    public bool gotoplayer;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CanBeDetected>();
         posIn = transform.position.x;
     }
 
@@ -29,25 +30,15 @@ public class EnemyMovementControl : MonoBehaviour {
             TimeSearch = Time.time + 0.5f;
         }
     }
-   /* void Update ()
+    void Update ()
     {
         if (target ==null)
         {
             FindPlayer();
             return ;
         }
-    }*/
-    void OnTriggerStay2D (Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-        gotoplayer = true;
     }
 
-    void OnTriggerExit2D (Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-            gotoplayer = false;
-    }
     void FixedUpdate()
     {
         if (target == null)
@@ -55,8 +46,7 @@ public class EnemyMovementControl : MonoBehaviour {
             FindPlayer();
             return;
         }
-        
-        if (gotoplayer == true)
+        if (player.gotoplayer == true)
         {
             GeneralRoutine = false;
             if (Vector3.Distance(transform.position, target.position) > 1f)

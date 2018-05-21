@@ -128,7 +128,7 @@ namespace UnityStandardAssets._2D
 
               if (!m_Grounded)
               {
-                  WallCheck = Physics2D.OverlapCircle(WallCheckPoint.position, 0.1f, WallLayer);
+                  WallCheck = Physics2D.OverlapCircle(WallCheckPoint.position, 0.01f, WallLayer);
 
                   if (((m_FacingRight) || (!m_FacingRight)) && WallCheck)
                   {

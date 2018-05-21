@@ -8,6 +8,8 @@ TagManager:
   - GM
   - Enemy
   - Elder
+  - ENEM
+  - PlayerRelated
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Wall
   - player
   - check
-  - 
+  - enemy
   - 
   - 
   - 
