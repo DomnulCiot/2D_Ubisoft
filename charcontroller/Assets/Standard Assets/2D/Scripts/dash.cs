@@ -9,11 +9,15 @@ public class dash : MonoBehaviour
     public float duration = 0;
     public float increase = 50;
     private float timer;
-     float Speed2;
+    private Animator m_Anim;
+    public bool isDashing = false;
+
+    float Speed2;
     public float timer2;
     void Awake()
     {
         Speed2 = Speed.m_MaxSpeed;
+        m_Anim = GetComponent<Animator>();
     }
     public float x;
     void Update()
@@ -26,7 +30,8 @@ public class dash : MonoBehaviour
                 timer+=Time.deltaTime;
         if (Input.GetKeyDown("d") && cool==50 && timer<=0.2)
         {
-
+            m_Anim.SetBool("Dash", true);
+            isDashing = true;
             Speed.m_MaxSpeed = Speed.m_MaxSpeed + increase;
             duration = 10;
             cool = 0;
@@ -42,7 +47,8 @@ public class dash : MonoBehaviour
             timer2 += Time.deltaTime;
         if (Input.GetKeyDown("a") && cool == 50 && timer2 <= 0.2)
         {
-
+            m_Anim.SetBool("dash", true);
+            isDashing = true;
             Speed.m_MaxSpeed = Speed.m_MaxSpeed + increase;
             duration = 10;
             cool = 0;
@@ -53,6 +59,10 @@ public class dash : MonoBehaviour
         if (duration > 0)
             duration -= 0.5f;
         else if (duration == 0)
+        {
+            m_Anim.SetBool("Dash", false);
+            isDashing = false;
             Speed.m_MaxSpeed = Speed2;
+        }
     }
 }
