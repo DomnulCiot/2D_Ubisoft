@@ -29,6 +29,8 @@ namespace UnityStandardAssets._2D
         public float x;
         public float y;
 
+       // public GameObject graphics;
+
         private void Awake()
         {
             // Setting up references.
@@ -36,6 +38,7 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+          //  graphics = GameObject.FindGameObjectWithTag("Graphics");
         }
 
 
@@ -177,6 +180,7 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+            //graphics.transform.localScale = theScale;
         }
     }
 }

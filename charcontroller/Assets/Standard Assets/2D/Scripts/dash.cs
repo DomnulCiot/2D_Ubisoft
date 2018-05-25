@@ -9,8 +9,10 @@ public class dash : MonoBehaviour
     public float duration = 0;
     public float increase = 50;
     private float timer;
-     float Speed2;
+    float Speed2;
     public float timer2;
+    public bool IsDashing = false;
+
     void Awake()
     {
         Speed2 = Speed.m_MaxSpeed;
@@ -20,16 +22,17 @@ public class dash : MonoBehaviour
     {
         if (Input.GetKeyUp("d"))
         {
-           timer = 0f;
+            timer = 0f;
         }
-            if (timer <=0.2 )
-                timer+=Time.deltaTime;
-        if (Input.GetKeyDown("d") && cool==50 && timer<=0.2)
+        if (timer <= 0.2)
+            timer += Time.deltaTime;
+        if (Input.GetKeyDown("d") && cool == 50 && timer <= 0.2)
         {
 
             Speed.m_MaxSpeed = Speed.m_MaxSpeed + increase;
             duration = 10;
             cool = 0;
+            IsDashing = true;
         }
 
 
@@ -46,6 +49,7 @@ public class dash : MonoBehaviour
             Speed.m_MaxSpeed = Speed.m_MaxSpeed + increase;
             duration = 10;
             cool = 0;
+            IsDashing = true;
         }
 
         if (cool < 50)
@@ -53,6 +57,10 @@ public class dash : MonoBehaviour
         if (duration > 0)
             duration -= 0.5f;
         else if (duration == 0)
+        {
             Speed.m_MaxSpeed = Speed2;
+            IsDashing = false;
+        }
+
     }
 }

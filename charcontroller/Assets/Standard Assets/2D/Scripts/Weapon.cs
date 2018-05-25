@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour
   public  bool canShoot = true;
     GameObject Bullet;
     DistanceJoint2D dist_joint;
+    float TimeSearch;
+
     //   Transform grap;
 
     // Use this for initialization
@@ -27,9 +29,27 @@ public class Weapon : MonoBehaviour
         dist_joint = GameObject.Find("player").GetComponent<DistanceJoint2D>();
     }
 
+    void FindDistJoint()
+    {
+        if (TimeSearch <= Time.time)
+        {
+            GameObject Search = GameObject.FindGameObjectWithTag("Player");
+            if (Search != null)
+                dist_joint = Search.GetComponent<DistanceJoint2D>();
+            TimeSearch = Time.time + 0.5f;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (dist_joint == null)
+        {
+            FindDistJoint();
+            return;
+        }
+
+
         if (dist_joint.enabled)
         {
             if (Input.GetKey("up"))

@@ -13,6 +13,8 @@ public class Grappler_move : MonoBehaviour {
     Rigidbody2D rb;
     RaycastHit2D hit;
     public float angle;
+    public GameObject Player;
+    float TimeSearch;
 
     Vector3 birth;
 	// Use this for initialization
@@ -27,14 +29,30 @@ public class Grappler_move : MonoBehaviour {
         birth = transform.position;
         hit = GameObject.Find("Pistol").GetComponent<Weapon>().hit;
         angle = Mathf.Deg2Rad * transform.eulerAngles.z;
-        if (GameObject.Find("player").GetComponent<PlatformerCharacter2D>().m_FacingRight == false) angle += Mathf.PI;
+        if (Player==null)
+        {
+            FindPlayer();
+            return;
+        }
+        if (Player.GetComponent<PlatformerCharacter2D>().m_FacingRight == false) angle += Mathf.PI;
+    }
+
+    void FindPlayer()
+    {
+        if (TimeSearch <= Time.time)
+        {
+            GameObject Search = GameObject.FindGameObjectWithTag("Player");
+            if (Search != null)
+                Player = Search;
+            TimeSearch = Time.time + 0.5f;
+        }
     }
 
 
-	// Update is called once per frame
+    // Update is called once per frame
 
 
-	void Update () {
+    void Update () {
 
         
         if(collider.enabled == false && Vector3.Distance(transform.position, firepoint.transform.position) > activateRadius)

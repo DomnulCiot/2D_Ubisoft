@@ -10,6 +10,7 @@ TagManager:
   - Elder
   - ENEM
   - PlayerRelated
+  - Gun
   layers:
   - Default
   - TransparentFX

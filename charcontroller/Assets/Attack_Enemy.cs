@@ -9,6 +9,7 @@ public class Attack_Enemy : MonoBehaviour {
     public float tm = 100;
     public float timer = 0;
     float TimeSearch = 0;
+    public dash DASH;
     void Awake ()
     {
         HP = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Health>();
@@ -21,6 +22,7 @@ public class Attack_Enemy : MonoBehaviour {
         {
             
                 timer = 0;
+            if (DASH.IsDashing == false)
                 HP.curHealth -= dmg;
             
         }

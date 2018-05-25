@@ -10,11 +10,18 @@ public class Player_Health : MonoBehaviour
     public int maxHealth = 100;
     private Rigidbody2D rb2D;
     float TimeSearch = 0;
+    public float posx;
+    public float posy;
+    public Transform Player;
+    public float time;
+    float timer = 0;
     // Use this for initialization
     void Start()
     {
         curHealth = maxHealth;
         rb2D = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        posx = Player.position.x;
+        posy = Player.position.y;
     }
 
     // Update is called once per frame
@@ -29,6 +36,9 @@ public class Player_Health : MonoBehaviour
             curHealth = maxHealth;
         if (curHealth <= 0)
            Die();
+        if (curHealth <= 0)
+            if (timer < time)
+                timer += 0.5f;
     }
 
 
@@ -36,7 +46,10 @@ public class Player_Health : MonoBehaviour
     {
 
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Player.position = new Vector2(posx, posy);
+        if (timer ==time)
         Game_Master.killPlayer(gameObject);
+
 
     }
 
