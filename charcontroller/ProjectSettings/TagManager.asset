@@ -11,6 +11,7 @@ TagManager:
   - ENEM
   - PlayerRelated
   - Gun
+  - Graphics
   layers:
   - Default
   - TransparentFX

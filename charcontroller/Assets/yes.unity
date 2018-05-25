@@ -1386,13 +1386,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120011034625281940, guid: eb18f1d5a8d10014290def939931ee7b,
+        type: 2}
+      propertyPath: m_Positions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4728159443340378, guid: eb18f1d5a8d10014290def939931ee7b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22.129086
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4728159443340378, guid: eb18f1d5a8d10014290def939931ee7b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.2680539
+      value: 27.5
       objectReference: {fileID: 0}
     - target: {fileID: 4728159443340378, guid: eb18f1d5a8d10014290def939931ee7b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1429,6 +1434,11 @@ Prefab:
     - target: {fileID: 1025069202331686, guid: eb18f1d5a8d10014290def939931ee7b, type: 2}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 120011034625281940, guid: eb18f1d5a8d10014290def939931ee7b,
+        type: 2}
+      propertyPath: m_Positions.Array.data[1].z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb18f1d5a8d10014290def939931ee7b, type: 2}
@@ -2202,6 +2212,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2013985092}
   m_Script: {fileID: 11500000, guid: 25ff8b45268c8874aa3c6e4d774ef584, type: 3}
+--- !u!4 &1214427320 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4440884916148278, guid: 8053df3a145af8e449baed9e887c2793,
+    type: 2}
+  m_PrefabInternal: {fileID: 2013985092}
 --- !u!114 &1283357952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94640,6 +94655,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1799427541 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1633352962259998, guid: 8053df3a145af8e449baed9e887c2793,
+    type: 2}
+  m_PrefabInternal: {fileID: 2013985092}
 --- !u!1 &1894921291
 GameObject:
   m_ObjectHideFlags: 0
@@ -94849,6 +94869,20 @@ Prefab:
       propertyPath: m_TagString
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 114844925144777778, guid: 8053df3a145af8e449baed9e887c2793,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1799427541}
+    - target: {fileID: 1195369558480708, guid: 8053df3a145af8e449baed9e887c2793, type: 2}
+      propertyPath: m_TagString
+      value: Graphics
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249743162586264, guid: 8053df3a145af8e449baed9e887c2793,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1214427320}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8053df3a145af8e449baed9e887c2793, type: 2}
   m_IsPrefabParent: 0
