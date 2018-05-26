@@ -14,8 +14,8 @@ public class Player_Health : MonoBehaviour
     public float posy;
     public Transform Player;
     public float time;
-    public float limit;
     float timer = 0;
+    public float limit;
 
 
     // Use this for initialization
@@ -42,10 +42,8 @@ public class Player_Health : MonoBehaviour
         if (curHealth <= 0)
             if (timer < time)
                 timer += 0.5f;
-
         if (transform.position.y < limit)
             curHealth -= 1000;
-
     }
 
 

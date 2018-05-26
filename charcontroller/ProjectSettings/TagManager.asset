@@ -12,8 +12,6 @@ TagManager:
   - PlayerRelated
   - Gun
   - Graphics
-  - movable_platform_up
-  - falling_platform
   layers:
   - Default
   - TransparentFX

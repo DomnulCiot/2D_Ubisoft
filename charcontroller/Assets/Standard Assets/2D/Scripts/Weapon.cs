@@ -14,11 +14,10 @@ public class Weapon : MonoBehaviour
     Transform Pistol;
     float timeToFire = 0;
     Transform firePoint;
-  public  bool canShoot = true;
+    public bool canShoot = true;
     GameObject Bullet;
     DistanceJoint2D dist_joint;
-    float TimeSearch;
-
+    public bool hasCollided = false;
     //   Transform grap;
 
     // Use this for initialization
@@ -26,87 +25,62 @@ public class Weapon : MonoBehaviour
     {
         firePoint = transform.Find("FirePoint");
         Pistol = transform.Find("Pistol");
-        dist_joint = GameObject.Find("player").GetComponent<DistanceJoint2D>();
-    }
-
-    void FindDistJoint()
-    {
-        if (TimeSearch <= Time.time)
-        {
-            GameObject Search = GameObject.FindGameObjectWithTag("Player");
-            if (Search != null)
-                dist_joint = Search.GetComponent<DistanceJoint2D>();
-            TimeSearch = Time.time + 0.5f;
-        }
+        // dist_joint = GameObject.Find("player").GetComponent<DistanceJoint2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (dist_joint == null)
-        {
-            FindDistJoint();
-            return;
-        }
-
-
-        if (dist_joint.enabled)
-        {
-            if (Input.GetKey("up"))
-            {
-                dist_joint.distance -= 0.1f;
-            }
-
-        }
-
-        if (dist_joint.enabled)
-        {
-            if (Input.GetKey("down"))
-            {
-                dist_joint.distance += 0.1f;
-            }
-
-        }
 
 
         // Debug.Log(GameObject.Find("Grappler(Clone)"));
         Bullet = GameObject.Find("Grappler(Clone)");
-        if (canShoot == false && Bullet == null) canShoot = true ;
-        if(Bullet != null)
+        if (canShoot == false && Bullet == null) canShoot = true;
+        if (Bullet != null)
         {
-            if(Vector3.Distance(hit.point, Bullet.transform.position)<0.7f)
+            if (Vector3.Distance(hit.point, Bullet.transform.position) < 1f)
             {
+                Debug.Log("entered");
                 Destroy(GameObject.Find("Grappler(Clone)"));
                 Instantiate(Anchor, hit.point, Quaternion.identity);
-                dist_joint.connectedBody = GameObject.Find("Anchor(Clone)").GetComponent<Rigidbody2D>();
+             /*   dist_joint = GameObject.Find("Anchor(Clone)").GetComponent<DistanceJoint2D>();
+                dist_joint.connectedBody = GameObject.Find("player").GetComponent<Rigidbody2D>();
                 dist_joint.connectedAnchor = Vector3.zero;
-                dist_joint.distance = Vector3.Distance(firePoint.position, hit.point);
-                dist_joint.enabled = true;
+                dist_joint.distance = Vector3.Distance(GameObject.Find("Anchor(Clone)").transform.position, GameObject.Find("player").transform.position);
+                dist_joint.enabled = true; */
 
             }
+        else if (hasCollided)
+            {
+                Instantiate(Anchor, GameObject.Find("Grappler(Clone)").transform.position, Quaternion.identity);
+                Destroy(GameObject.Find("Grappler(Clone)"));
+                //Instantiate(Anchor, hit.point, Quaternion.identity);
+              /*  dist_joint = GameObject.Find("Anchor(Clone)").GetComponent<DistanceJoint2D>();
+                dist_joint.connectedBody = GameObject.Find("player").GetComponent<Rigidbody2D>();
+                dist_joint.connectedAnchor = Vector3.zero;
+                dist_joint.distance = Vector3.Distance(GameObject.Find("Anchor(Clone)").transform.position, GameObject.Find("player").transform.position);
+                dist_joint.enabled = true;  */
+                hasCollided = false;
+            }   
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            if(!canShoot)
+            if (!canShoot)
             {
-                Destroy(GameObject.Find("Grappler(Clone)"));
-                GameObject.Find("Anchor(Clone)");
-                dist_joint.enabled = false;
+                if (Bullet != null) Destroy(Bullet);
             }
 
             else
             {
-                if(dist_joint.enabled == false)
+                if (GameObject.Find("Anchor(Clone)") != null)
+                {
+                    Destroy(GameObject.Find("Anchor(Clone)"));
+                }
+                else
                 {
                     Shoot();
                     canShoot = false;
-                }
-                if(dist_joint.enabled == true)
-                {
-                    Destroy(GameObject.Find("Anchor(Clone)"));
-                    dist_joint.enabled = false;
-
                 }
             }
 

@@ -11,6 +11,7 @@ public class Line_Draw : MonoBehaviour {
         line = GetComponent<LineRenderer>();
         line.positionCount = 2;
         line.enabled = false;
+        transform.position = new Vector3(-100f, 0f, 0f);
 	}
 	
 	// Update is called once per frame

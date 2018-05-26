@@ -10,7 +10,7 @@ public class Button_Script : MonoBehaviour {
     public GameObject settings_menu;
 	public void Play ()
     {
-        SceneManager.LoadScene("yes");
+        SceneManager.LoadScene("CutScene");
 
     }
 
@@ -33,7 +33,6 @@ public class Button_Script : MonoBehaviour {
     }
     public void Full_Screen (bool IsFullScreen)
     {
-        Debug.Log("ponis" + IsFullScreen);
         Screen.fullScreen = IsFullScreen;
     }
 }

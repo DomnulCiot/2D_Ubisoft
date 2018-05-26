@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4152650373676626}
   - component: {fileID: 50346705898242890}
   - component: {fileID: 114756925351157090}
+  - component: {fileID: 232913408266520176}
   m_Layer: 0
   m_Name: Anchor
   m_TagString: Untagged
@@ -75,3 +76,21 @@ MonoBehaviour:
   move_distance: 10
   ReturnPoint: {x: 0, y: 0, z: 0}
   allowed: 0
+--- !u!232 &232913408266520176
+DistanceJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1592025191551744}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 1
+  m_MaxDistanceOnly: 0

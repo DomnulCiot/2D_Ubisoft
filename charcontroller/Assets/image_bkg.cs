@@ -15,10 +15,10 @@ public class image_bkg : MonoBehaviour {
    public void NextImg ()
     {
         count++;
-        if (count<2)
+        if (count<12)
         img.sprite = Img[count];
         else
-        if (count == 2)
+        if (count == 12)
         {
             Debug.Log("monis");
             SceneManager.LoadScene("yes");
